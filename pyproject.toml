@@ -1,0 +1,50 @@
+[project]
+name = "video2img"
+version = "0.1.0"
+description = "影片與圖片轉換工具 - 支援影片轉圖片、圖片轉 GIF/影片、影片轉 GIF"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.14"
+authors = [
+    { name = "LostSunset" }
+]
+keywords = ["video", "image", "gif", "converter", "pyside6"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Video :: Conversion",
+]
+dependencies = [
+    "imageio>=2.37.2",
+    "imageio-ffmpeg>=0.6.0",
+    "opencv-python-headless>=4.13.0.90",
+    "pillow>=12.1.0",
+    "pyside6>=6.10.2",
+]
+
+[project.scripts]
+video2img = "src.main_window:main"
+
+[project.urls]
+Homepage = "https://github.com/LostSunset/Video2Img2Gif_Video2Img"
+Repository = "https://github.com/LostSunset/Video2Img2Gif_Video2Img.git"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.0",
+    "pytest>=8.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
